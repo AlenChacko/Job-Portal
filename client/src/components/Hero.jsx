@@ -55,7 +55,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <HeroCompanies/>
+      <HeroCompanies />
     </div>
   );
 };
