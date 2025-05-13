@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { assets, JobCategories, JobLocations } from "../assets/assets";
 import JobCard from "./JobCard";
+// import NoResult from "./NoResult";
 
 const JobListing = () => {
   const { isSearched, setIsSearched, searchFilter, setSearchFilter, jobs } =
@@ -149,13 +150,40 @@ const JobListing = () => {
           Latest Jobs
         </h3>
         <p className="mb-8">Get your desired jobs from top companies</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-          {filteredJobs
-            .slice((currentPage - 1) * 6, currentPage * 6)
-            .map((job, index) => (
-              <JobCard key={index} job={job} />
-            ))}
-        </div>
+        {filteredJobs.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+            {filteredJobs
+              .slice((currentPage - 1) * 6, currentPage * 6)
+              .map((job, index) => (
+                <JobCard key={index} job={job} />
+              ))}
+          </div>
+        ) : (
+          // <NoResult/>
+          <div className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-lg py-16 px-6 text-center shadow-sm">
+            <img
+              src={assets.no_result} // ← Replace with an appropriate "no result" icon in your assets
+              alt="No results"
+              className="w-20 h-20 mb-6 opacity-70"
+            />
+            <h4 className="text-2xl font-semibold text-gray-700 mb-2">
+              No results found
+            </h4>
+            <p className="text-gray-500 mb-4">
+              Try adjusting your filters or search keywords.
+            </p>
+            <button
+              onClick={() => {
+                setSearchFilter({ title: "", location: "" });
+                setSelectedCategories([]);
+                setSelectedLocations([]);
+              }}
+              className="mt-4 px-5 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white font-medium transition"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
         {/* Pagination */}
         {filteredJobs.length > 0 && (
           <div className="flex items-center justify-center space-x-2 mt-10 ">

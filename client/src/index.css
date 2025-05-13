@@ -1,13 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
-    font-family: Outfit;
+* {
+  font-family: Outfit;
 }
 
-::-webkit-scrollbar {
-    display: none;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.rich-text {
+  @apply text-gray-700 leading-relaxed space-y-4;
+}
+
+.rich-text p {
+  @apply text-base;
+}
+
+.rich-text h1 {
+  @apply text-3xl font-bold mt-6 mb-2 text-gray-900;
+}
+
+.rich-text h2 {
+  @apply text-2xl font-semibold mt-6 mb-2 text-gray-800;
+}
+
+.rich-text h3 {
+  @apply text-xl font-semibold mt-5 mb-2 text-gray-800;
+}
+
+.rich-text ol {
+  @apply list-decimal pl-6 space-y-2;
+}
+
+.rich-text ul {
+  @apply list-disc pl-6 space-y-2;
+}
+
+.rich-text li {
+  @apply text-base;
+}
+
+.rich-text strong {
+  @apply font-semibold text-gray-900;
+}
+
+.rich-text em {
+  @apply italic text-gray-600;
+}
+
+.rich-text a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
