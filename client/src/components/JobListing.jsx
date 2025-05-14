@@ -162,7 +162,7 @@ const JobListing = () => {
           // <NoResult/>
           <div className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-lg py-16 px-6 text-center shadow-sm">
             <img
-              src={assets.no_result} // ← Replace with an appropriate "no result" icon in your assets
+              src={assets.no_result} 
               alt="No results"
               className="w-20 h-20 mb-6 opacity-70"
             />
