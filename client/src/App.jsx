@@ -8,8 +8,7 @@ import RecruiterLogin from "./components/RecruiterLogin";
 import { AppContext } from "./context/AppContext";
 
 const App = () => {
-
-  const {showRecruiterLogin} = useContext(AppContext)
+  const { showRecruiterLogin } = useContext(AppContext);
 
   return (
     <div>
