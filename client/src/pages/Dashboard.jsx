@@ -47,7 +47,7 @@ const Dashboard = () => {
               }
             >
               <img src={assets.add_icon} alt="" className="min-w-4" />
-              <p className="max-sm:hidden">Add Job</p>
+              <p className="max-sm:hidden">Add Jobs</p>
             </NavLink>
 
             <NavLink
@@ -59,7 +59,7 @@ const Dashboard = () => {
               }
             >
               <img src={assets.home_icon} alt="" className="min-w-4" />
-              <p className="max-sm:hidden">Manage Job</p>
+              <p className="max-sm:hidden">Manage Jobs</p>
             </NavLink>
 
             <NavLink
